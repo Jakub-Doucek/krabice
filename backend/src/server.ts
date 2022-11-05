@@ -21,7 +21,11 @@ app.use(router.routes())
 
 app.use(require('koa-static')('./build'))
 
-app.listen(process.env.PORT || 4000);
+app.listen(process.env.PORT || 4444);
 
-mongoose.connect('mongodb://localhost:27017/darecky_db');
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+mongoose.connect('mongodb+srv://krabicak:LT5wZJHn05hZFHUf@krabice.jxpw74n.mongodb.net/krabice?retryWrites=true&w=majority');
 module.exports = app
