@@ -24,9 +24,11 @@ class Wish extends Component <IWishProps, IWishState> {
     event.preventDefault() // Prevent form from reloading page
     const { newGiver } = this.state
 
-    if(newGiver) {
+    if(!!newGiver) {
       this.props.addGiver(this.props.wish._id, newGiver)
       this.setState({ newGiver: newGiver })
+    } else {
+      alert("Nejprve vyplň své jméno!")
     }
   }
 
@@ -101,6 +103,14 @@ class Wishes extends Component <IWishesProps, IWishesState> {
     return (
       <section className="section full-column">
         <h1 className="title white">Vánoční Krabice</h1>
+
+        <div className='main-info'>
+          Zde si můžete rezervovat přání a pak ho nejdéle do <b>9.12.2022</b> donést do <b>Divadla 29</b>, a to <b>Po-Pá 14:00-22:00</b>.
+          K vybranému přání, které je volné, vyplňte své jméno a potvrďte tlačítkem <b>Obdarovat</b>.
+        </div>
+
+        <div className='description'>Nejen vánoční krabice pro děti z ohrožených rodin. Skupina sdružuje dárce a dobrovolníky, kteří chtějí pomáhat dětem formou adresného dárku k různým příležitostem, jako jsou Vánoce nebo začátek školního roku. Ve skupině je možné si zamluvit adresný dárek pro konkrétní děti, pokud jejich rodina spolupracuje s neziskovými organizacemi a my od nich máme informaci o vysněném dárku.</div>
+
         <div className="error">{error}</div>
 
         <div className="white">

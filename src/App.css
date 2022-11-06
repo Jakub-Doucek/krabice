@@ -1,6 +1,10 @@
 html { background-color: #222222; }
 body {
   background: cornflowerblue;
+  min-width:1000px;        /* Suppose you want minimum width of 1000px */
+   width: auto !important;  /* Firefox will set width as auto */
+   width:1000px;            /* As IE6 ignores !important it will set width as 1000px; */
+
 }
 .todo-item { text-align: left; }
 .error { color: crimson; }
@@ -11,6 +15,26 @@ body {
 .todo-list { max-width: 400px !important; }
 .wishes-list { width: 90% !important; }
 .form { margin-bottom: 0px;}
+
+.main-info {
+  color: #f1f1f7;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  width: 60%;
+  text-align: center; 
+  align-self: center;
+}
+
+.description {
+  color: #f1f1f7;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  width: 60%;
+  text-align: center; 
+  align-self: center;
+}
 
 .wishes-column{
   padding: 1%;
@@ -44,6 +68,7 @@ table {
   background-color: #f1f1f7;
   border-collapse: collapse;
   font-size: 0.9rem;
+  min-width: 800px;
 }
 
 @media screen and (max-width : 650px)
