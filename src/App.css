@@ -1,5 +1,7 @@
 html { background-color: #222222; }
-body { background: cornflowerblue; }
+body {
+  background: cornflowerblue;
+}
 .todo-item { text-align: left; }
 .error { color: crimson; }
 .white { color: white !important; }
@@ -11,7 +13,7 @@ body { background: cornflowerblue; }
 .form { margin-bottom: 0px;}
 
 .wishes-column{
-  padding: 15px;
+  padding: 1%;
   text-align: center; 
   vertical-align: middle;
 }
@@ -22,11 +24,12 @@ body { background: cornflowerblue; }
   white-space: nowrap;
 }
 .organization-column {
-  white-space: nowrap;
+  min-width: 12%;
+  padding-right: 8px;
 }
 
 .giver-column {
-  min-width: 200px;
+  min-width: 150px;
 }
 
 .description-column {
@@ -40,8 +43,16 @@ body { background: cornflowerblue; }
 table {
   background-color: #f1f1f7;
   border-collapse: collapse;
-  width: 100%;
+  font-size: 0.9rem;
 }
+
+@media screen and (max-width : 650px)
+{
+  table {
+    font-size: 0.7rem;
+  }
+}
+
 td, th {
   border: 2px solid cornflowerblue;
 }

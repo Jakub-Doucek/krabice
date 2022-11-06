@@ -50,7 +50,7 @@ class Wish extends Component <IWishProps, IWishState> {
               <div className="control">
                 <input className="input"
                   value={newGiver}
-                  placeholder="Váš email"
+                  placeholder="Zadej jméno"
                   onChange={(e) => this.setState({ newGiver: e.target.value })} />
               </div>
               <div className="control">
