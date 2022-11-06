@@ -32,7 +32,7 @@ import Wishes from './components/wishes'
                <Route path="/delivery-places">
                  <DeliveryPlaces />
                </Route>
-               <Route path="/wishes">
+               <Route path="/">
                  <Wishes />
                </Route>
                <Route path="/">
