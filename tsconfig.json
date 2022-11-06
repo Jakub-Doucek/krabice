@@ -1,24 +1,13 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist",
-    "lib": ["es5", "es6", "dom", "dom.iterable"],
-    "target": "es6",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "CommonJS",
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "sourceMap": true,
-  },
-  "include": [
-    "src"
-  ]
-}
+    "compilerOptions": {
+      "outDir": "./dist",
+      "lib": ["es5", "es6"],
+      "target": "es6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+    },
+    "include": ["./src/backend/**/*"]
+  }

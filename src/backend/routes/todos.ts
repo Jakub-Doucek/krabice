@@ -1,4 +1,4 @@
-import Router from 'koa-router'
+import Router = require("koa-router")
 const router = new Router()
 import TodoController from '../controllers/todos'
 

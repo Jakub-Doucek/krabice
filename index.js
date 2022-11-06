@@ -1,1 +1,1 @@
-require("./dist/backend/server.js")
+require("./dist/server.js")
