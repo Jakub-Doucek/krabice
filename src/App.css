@@ -25,8 +25,16 @@ body { background: cornflowerblue; }
   white-space: nowrap;
 }
 
+.giver-column {
+  min-width: 200px;
+}
+
 .description-column {
   text-align: left !important;; 
+}
+
+.give-button{
+  margin-top: 5px;
 }
 
 table {

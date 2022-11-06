@@ -38,13 +38,15 @@ class Wish extends Component <IWishProps, IWishState> {
     return (
     <tr>
     <td className="wishes-column name-column">{this.props.wish.name}</td>
-    <td className="wishes-column description-column">{this.props.wish.description}</td>
+    <td className="wishes-column description-column">
+      <span dangerouslySetInnerHTML={{__html: this.props.wish.description}} />
+    </td>
     <td className="wishes-column age-column">{this.props.wish.age}</td>
     <td className="wishes-column organization-column">{this.props.wish.organization}</td>
-        <td className="wishes-column">
+        <td className="wishes-column organization-column">
           {!giver ? (
           <form className="form" onSubmit={this.addGiver.bind(this)}>
-            <div className="field has-addons" style={{ justifyContent: 'center' }}>
+            <div className="field" style={{ justifyContent: 'center' }}>
               <div className="control">
                 <input className="input"
                   value={newGiver}
@@ -52,7 +54,7 @@ class Wish extends Component <IWishProps, IWishState> {
                   onChange={(e) => this.setState({ newGiver: e.target.value })} />
               </div>
               <div className="control">
-                <button className={`button is-success ${(isLoading || isSaving) && "is-loading"}`}
+                <button className={`button is-success give-button ${(isLoading || isSaving) && "is-loading"}`}
                   disabled={isLoading || isSaving}>Obdarovat</button>
               </div>
             </div>
@@ -101,6 +103,10 @@ class Wishes extends Component <IWishesProps, IWishesState> {
         <h1 className="title white">Vánoční Krabice</h1>
         <div className="error">{error}</div>
 
+        <div className="white">
+            Celkem přání: {total}  , Zabraných přání: {complete} , Volných přání: {incomplete}
+        </div>
+
         <div className="container wishes-list">
         <table>
           <tr>
@@ -108,7 +114,7 @@ class Wishes extends Component <IWishesProps, IWishesState> {
             <th className="wishes-column description-column">Popis</th>
             <th className="wishes-column age-column">Věk</th>
             <th className="wishes-column organization-column">Organizace</th>
-            <th className="wishes-column">Dárce</th>
+            <th className="wishes-column giver-column">Dárce</th>
           </tr>
           {wishes.map((wish: any) => <Wish key={wish._id}
                                      id={wish._id}
@@ -118,9 +124,6 @@ class Wishes extends Component <IWishesProps, IWishesState> {
                                      addGiver={this.props.addGiver}/> )}
         </table>
 
-          <div className="white">
-            Celkem přání: {total}  , Zabraných přání: {complete} , Volných přání: {incomplete}
-          </div>
         </div>
       </section>
     );
