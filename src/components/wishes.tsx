@@ -105,11 +105,15 @@ class Wishes extends Component <IWishesProps, IWishesState> {
         <h1 className="title white">Vánoční Krabice</h1>
 
         <div className='main-info'>
-          Zde si můžete rezervovat přání a pak ho nejdéle do <b>9.12.2022</b> donést do <b>Divadla 29</b>, a to <b>Po-Pá 14:00-22:00</b>.
-          K vybranému přání, které je volné, vyplňte své jméno a potvrďte tlačítkem <b>Obdarovat</b>.
+        Na této stránce zjistíte jaké vánoční přání mají v ohrožených rodinách. Rodiny spolupracují s neziskovými organizacemi, svou situace řeší, ale prostředky na vánoční dárky jim už nezbývají. 
+        V seznamu je možné si rezervovat konkrétní dárek pro konkrétní dítě či maminku a zapsat se do tabulky. <br />
+        Dárky prosím doneste <b>zabalené a popsané - jméno, věk a název organizace</b>. S takto označeným dárkem se zastavte do <b>Klubu 29 - Anežská 29, Pardubice</b>. Dárky doneste prosím do <b>9.12</b> ať je stihneme předat rodinám. 
+        Dárky je možné nosit <b>od pondělí do soboty v čase 14-22 hodin</b>. Děkujeme za každý s láskou zabalený dárek..
         </div>
 
-        <div className='description'>Nejen vánoční krabice pro děti z ohrožených rodin. Skupina sdružuje dárce a dobrovolníky, kteří chtějí pomáhat dětem formou adresného dárku k různým příležitostem, jako jsou Vánoce nebo začátek školního roku. Ve skupině je možné si zamluvit adresný dárek pro konkrétní děti, pokud jejich rodina spolupracuje s neziskovými organizacemi a my od nich máme informaci o vysněném dárku.</div>
+        <div className='description'>
+          Více informací najdete ve facebookové skupině <a href="https://www.facebook.com/groups/477673940828096/">Krabice - skupina pro páchání dobra</a>. V případě dotazů a nejasností nás můžete kontaktovat přes email: iva.balik@seznam.cz nebo lenka.spanihelova@gmail.com
+        </div>
 
         <div className="error">{error}</div>
 

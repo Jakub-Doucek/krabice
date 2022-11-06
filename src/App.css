@@ -16,13 +16,36 @@ body {
 .wishes-list { width: 90% !important; }
 .form { margin-bottom: 0px;}
 
+.description a:link {
+  color: rgb(240, 241, 255);
+  text-decoration: underline;
+}
+
+/* visited link */
+.description a:visited {
+  color: rgb(196, 210, 251);
+  text-decoration: underline;
+}
+
+/* mouse over link */
+.description a:hover {
+  color: rgb(0, 13, 67);
+  text-decoration: underline;
+}
+
+/* selected link */
+.description a:active {
+  color: rgb(0, 0, 77);
+  text-decoration: underline;
+}
+
 .main-info {
   color: #f1f1f7;
   font-size: 1.2rem;
   margin-bottom: 30px;
   margin-top: 10px;
-  width: 60%;
-  text-align: center; 
+  width: 75%;
+  text-align: left; 
   align-self: center;
 }
 
@@ -31,7 +54,7 @@ body {
   font-size: 1rem;
   margin-bottom: 30px;
   margin-top: 10px;
-  width: 60%;
+  width: 65%;
   text-align: center; 
   align-self: center;
 }
@@ -42,7 +65,7 @@ body {
   vertical-align: middle;
 }
 .name-column {
-  white-space: nowrap;
+
 }
 .age-column {
   white-space: nowrap;
@@ -67,7 +90,7 @@ body {
 table {
   background-color: #f1f1f7;
   border-collapse: collapse;
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   min-width: 700px;
 }
 
