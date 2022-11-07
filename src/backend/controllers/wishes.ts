@@ -10,10 +10,16 @@ export default class WishController
 
     static async updateGiver(ctx) {
         const wish = await Wish.findById(ctx.request.body._id)
-        wish.giver = ctx.request.body.giver
-        wish.locked = true
-        const updatedWish = await wish.save()
-        ctx.body = updatedWish
+
+        if (!wish || wish.locked){
+            ctx.body = null
+            ctx.status = 205
+        } else {
+            wish.giver = ctx.request.body.giver
+            wish.locked = true
+            const updatedWish = await wish.save()
+            ctx.body = updatedWish
+        }
     }
 }
  

@@ -3,6 +3,8 @@ import {
     LOADED_WISHES,
     ADD_GIVER,
     ADD_GIVER_SUCCESS,
+    ADD_GIVER_FAIL,
+    ADD_GIVER_FAIL_CONFIRM,
     FETCH_WISHES
   } from '../actions/wishes'
   
@@ -34,7 +36,13 @@ import {
           ),
           saving: false
         }
-  
+
+      case ADD_GIVER_FAIL:
+        return { ...state, loading: true, saving: false, addGiverFailed: true }
+
+      case ADD_GIVER_FAIL_CONFIRM:
+        return { ...state, loading: true, saving: false, addGiverFailed: false }  
+
       case WISHES_FAILURE:
         return {...state, loading: false, saving: false, error: action.error}
   

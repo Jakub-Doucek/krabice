@@ -1,6 +1,6 @@
 import { call, put, takeLatest, takeEvery } from 'redux-saga/effects'
 import { ADD_TODO, DELETE_TODO, TOGGLE_TODO, FETCH_TODOS, loadedTodos, addTodoSuccess, todosFailure } from '../actions/todos'
-import { ADD_GIVER, FETCH_WISHES, addGiverSuccess, loadedWishes, wishesFailure } from '../actions/wishes'
+import { ADD_GIVER, FETCH_WISHES, addGiverSuccess, addGiverFail, loadedWishes, wishesFailure } from '../actions/wishes'
 import { FETCH_DELIVERY_PLACES, loadedDeliveryPlaces, deliveryPlacesFailure, ADD_DELIVERY_PLACE, addDeliveryPlaceSuccess} from '../actions/delivery_places'
 
 
@@ -97,8 +97,12 @@ function* addNewGiver (action: any) {
     }
 
     const res = yield call(fetch, 'v1/wishes/giver/', options)
-    const wish = yield res.json()
-    yield put(addGiverSuccess(wish))
+    if (res.status === 205){
+      yield put(addGiverFail())
+    } else {
+      const wish = yield res.json()
+      yield put(addGiverSuccess(wish))
+    }
   } catch (e) {
     yield put(wishesFailure(e.message))
   }

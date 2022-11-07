@@ -3,15 +3,17 @@ export const LOADED_WISHES = 'LOADED_WISHES'
 export const FETCH_WISHES = 'FETCH_WISHES'
 export const ADD_GIVER = 'ADD_GIVER'
 export const ADD_GIVER_SUCCESS = 'ADD_GIVER_SUCCESS'
+export const ADD_GIVER_FAIL = 'ADD_GIVER_FAIL'
+export const ADD_GIVER_FAIL_CONFIRM = 'ADD_GIVER_FAIL_CONFIRM'
 export const WISHES_FAILURE = 'WISHES_FAILURE'
 
 // action creators
 export function loadedWishes(wishes: any) {
-return { type: LOADED_WISHES, wishes }
+    return { type: LOADED_WISHES, wishes }
 }
 
 export function fetchWishes() {
-return { type: FETCH_WISHES }
+    return { type: FETCH_WISHES }
 }
 
 export function addGiver(_id: any, giver: string) {
@@ -20,7 +22,15 @@ export function addGiver(_id: any, giver: string) {
 
 export function addGiverSuccess(wish: any) {
     return { type: ADD_GIVER_SUCCESS, wish }
-    }
+}
+
+export function addGiverFail() {
+    return { type: ADD_GIVER_FAIL }
+}
+
+export function addGiverFailConfirm() {
+    return { type: ADD_GIVER_FAIL_CONFIRM }
+}
 
 export function wishesFailure(error: any) {
     return { type: WISHES_FAILURE, error }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import 'bulma/css/bulma.css'
 import { connect } from 'react-redux'
-import { fetchWishes, addGiver } from '../actions/wishes';
+import { fetchWishes, addGiver, addGiverFailConfirm } from '../actions/wishes';
 
 interface IWishProps {
   wish?: any;
@@ -75,10 +75,12 @@ class Wish extends Component <IWishProps, IWishState> {
 interface IWishesProps {
   fetchWishes?: any;
   addGiver?: any;
+  addGiverFailConfirm?: any;
   wishes: any;
   isLoading: any;
   isSaving: any;
   error: any;
+  addGiverFailed: any;
 }
 
 interface IWishesState {
@@ -99,6 +101,11 @@ class Wishes extends Component <IWishesProps, IWishesState> {
     const total = wishes.length
     const complete = wishes.filter((wish: any) => wish.giver).length
     const incomplete = wishes.filter((wish: any) => !wish.giver).length
+
+    if (this.props.addGiverFailed){
+      alert("Toto přání je již obsazené. Prosím obnovte stránku, aby se aktualizovala tabulka. (Pomocí klávesy F5)")
+      this.props.addGiverFailConfirm();
+    }
 
     return (
       <section className="section full-column">
@@ -149,13 +156,15 @@ const mapStateToProps = (state: any) => {
     wishes: state.wishes.items,
     isLoading: state.wishes.loading,
     isSaving: state.wishes.saving,
-    error: state.wishes.error
+    error: state.wishes.error,
+    addGiverFailed: state.wishes.addGiverFailed
   }
 }
 
 const mapDispatchToProps = {
     fetchWishes,
-    addGiver
+    addGiver,
+    addGiverFailConfirm
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Wishes)
