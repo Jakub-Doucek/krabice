@@ -114,7 +114,7 @@ class Wishes extends Component <IWishesProps, IWishesState> {
         <div className='main-info'>
         Na této stránce zjistíte, jaké vánoční přání mají v ohrožených rodinách. Rodiny spolupracují s neziskovými organizacemi, svou situaci řeší, ale prostředky na vánoční dárky jim už nezbývají. 
         V seznamu je možné si rezervovat konkrétní dárek pro konkrétní dítě či maminku a zapsat se do tabulky. <br />
-        Dárky prosím doneste <b>zabalené a popsané - jméno, věk a název organizace</b>. S takto označeným dárkem se zastavte do <b>Klubu 29 - Svaté Anežky české 29, Pardubice</b>. Dárky doneste prosím do <b>9.12.</b>, ať je stihneme předat rodinám. 
+        Dárky prosím doneste <b>zabalené a popsané - jméno, věk a název organizace</b>. S takto označeným dárkem se zastavte do <b>Klubu 29 - Svaté Anežky české 29, Pardubice</b>. Dárky doneste prosím do <b>15.12. 17 hodin</b>, ať je stihneme předat rodinám. 
         Dárky je možné nosit <b>od pondělí do soboty v čase 14-22 hodin</b>. Děkujeme za každý s láskou zabalený dárek!
         </div>
 
